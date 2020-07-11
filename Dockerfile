@@ -21,6 +21,11 @@ ARG TERRAFORM_VERSION="0.11.13"
 RUN apt-get install unzip && wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 RUN unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip && mv terraform /usr/local/bin/ && rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
+## Python requirements
+COPY python-requirements.txt /root/
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r python-requirements.txt
+
 ## Docker
 RUN curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh && rm get-docker.sh
 

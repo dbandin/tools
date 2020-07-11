@@ -43,5 +43,5 @@ rm ./kubectl-completion.sh
 # usage:
 #   cat file.yaml | yaml2json
 yaml2json () {
-	python3 -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' <&0
+	python3 -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin, Loader=yaml.FullLoader), sys.stdout, indent=4)' <&0
 }
