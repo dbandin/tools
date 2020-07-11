@@ -35,3 +35,13 @@ antigen apply
 k completion zsh > kubectl-completion.sh
 . ./kubectl-completion.sh
 rm ./kubectl-completion.sh
+
+# Functions
+## yaml2json
+# convert yaml to json
+# Gets yaml from stdin and spits json to stdout
+# usage:
+#   cat file.yaml | yaml2json
+yaml2json () {
+	python3 -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' <&0
+}
