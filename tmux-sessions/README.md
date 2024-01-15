@@ -27,3 +27,4 @@ Execute the script [tmux_virtual_sessions.sh](tmux_virtual_sessions.sh) with the
 $ ./tmux_virtual_sessions.sh ansible_nat_lab_inventory
 ```
 
+![Usage](../doc/images/tmux_sessions.svg)
