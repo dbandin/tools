@@ -2,7 +2,7 @@
 
 ## Ansible LAB
 
-* Script: [tmux_virtual_nat_sessions.sh](tmux_virtual_nat_sessions.sh)
+* Script: [tmux_virtual_sessions.sh](tmux_virtual_sessions.sh)
 
 The lab I have set up is running virtualized with a NAT network to be isolated and be able of running it against a wifi interface without ip issues. To access the lab virtual machines from the host, the ssh port is forwarded. To allow this, just once the port forwardings are configured the port should be specified in the inventory file and the ips should be completed with the localhost address.
 
@@ -17,13 +17,13 @@ host_name1 port user1 ip
 host_nam2  port user2 ip
 ```
 
-* Example: [ansible_vbox_nat_lab_inventory](ansible_vbox_nat_lab_inventory)
+* Example: [ansible_nat_lab_inventory](ansible_nat_lab_inventory)
 
 ### Usage
 
-Execute the script [tmux_virtual_nat_sessions.sh](tmux_virtual_nat_sessions.sh) with the name of the inventory file as argument.
+Execute the script [tmux_virtual_sessions.sh](tmux_virtual_sessions.sh) with the name of the inventory file as argument.
 
 ```bash
-$ ./tmux_virtual_nat_sessions.sh ansible_vbox_nat_lab_inventory
+$ ./tmux_virtual_sessions.sh ansible_nat_lab_inventory
 ```
 
